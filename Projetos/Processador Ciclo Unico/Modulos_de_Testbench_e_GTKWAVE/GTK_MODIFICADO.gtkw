@@ -1,14 +1,14 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Mon Feb 10 02:42:56 2025
+[*] Wed Feb 12 01:32:14 2025
 [*]
-[dumpfile] "C:\Users\rafae\OneDrive\�rea de Trabalho\VsCode\Verilog\Processador Ciclo Unico\Processador.vcd"
-[dumpfile_mtime] "Mon Feb 10 02:41:14 2025"
-[dumpfile_size] 95299
-[savefile] "C:\Users\rafae\OneDrive\�rea de Trabalho\VsCode\Verilog\Processador Ciclo Unico\GTK_MODIFICADO.gtkw"
+[dumpfile] "C:\Users\rafae\OneDrive\�rea de Trabalho\VsCode\Arquitetura\Projetos\Processador Ciclo Unico\Modulos de Testbench e GTKWAVE\processador.vcd"
+[dumpfile_mtime] "Mon Feb 10 23:48:40 2025"
+[dumpfile_size] 85797
+[savefile] "C:\Users\rafae\OneDrive\�rea de Trabalho\VsCode\Arquitetura\Projetos\Processador Ciclo Unico\Modulos de Testbench e GTKWAVE\GTK_MODIFICADO.gtkw"
 [timestart] 28
 [size] 1920 1017
-[pos] -9 -9
+[pos] -1 -1
 *0.000000 21 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] SingleCycleMIPS_Simulation.
 [sst_width] 404
@@ -150,6 +150,88 @@ SingleCycleMIPS_Simulation.Banco_de_Registradores[31].registrador[31:0]
 @1401200
 -Banco de registradores
 @c00200
+-Memoria_De_Dados
+@22
+SingleCycleMIPS_Simulation.Memoria_de_Dados[0].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[1].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[2].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[3].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[4].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[5].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[6].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[7].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[8].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[9].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[10].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[11].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[12].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[13].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[14].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[15].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[16].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[17].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[18].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[19].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[20].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[21].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[22].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[23].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[24].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[25].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[26].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[27].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[28].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[29].data[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Dados[30].data[31:0]
+@1401200
+-Memoria_De_Dados
+@c00201
+-Memoria_de_instrução
+@23
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[0].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[1].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[2].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[3].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[4].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[5].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[6].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[7].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[8].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[9].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[10].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[11].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[12].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[13].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[14].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[15].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[16].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[17].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[18].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[19].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[20].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[21].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[22].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[23].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[24].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[25].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[26].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[27].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[28].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[29].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[30].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[31].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[32].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[33].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[34].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[35].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[36].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[37].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[38].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[39].instr_mem[31:0]
+SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[40].instr_mem[31:0]
+@1401201
+-Memoria_de_instrução
+@c00200
 -alu
 @22
 SingleCycleMIPS_Simulation.uut.alu.ALUControl[3:0]
@@ -264,87 +346,5 @@ SingleCycleMIPS_Simulation.uut.reg_dst_mux.out[4:0]
 SingleCycleMIPS_Simulation.uut.reg_dst_mux.sel
 @1401200
 -Mux_Reg_Dst
-@c00200
--Memoria_de_instrução
-@22
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[0].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[1].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[2].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[3].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[4].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[5].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[6].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[7].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[8].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[9].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[10].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[11].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[12].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[13].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[14].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[15].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[16].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[17].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[18].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[19].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[20].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[21].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[22].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[23].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[24].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[25].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[26].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[27].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[28].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[29].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[30].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[31].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[32].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[33].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[34].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[35].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[36].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[37].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[38].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[39].instr_mem[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Instrucoes[40].instr_mem[31:0]
-@1401200
--Memoria_de_instrução
-@800201
--Memoria_De_Dados
-@23
-SingleCycleMIPS_Simulation.Memoria_de_Dados[0].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[1].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[2].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[3].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[4].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[5].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[6].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[7].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[8].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[9].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[10].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[11].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[12].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[13].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[14].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[15].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[16].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[17].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[18].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[19].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[20].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[21].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[22].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[23].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[24].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[25].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[26].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[27].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[28].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[29].data[31:0]
-SingleCycleMIPS_Simulation.Memoria_de_Dados[30].data[31:0]
-@1000201
--Memoria_De_Dados
 [pattern_trace] 1
 [pattern_trace] 0

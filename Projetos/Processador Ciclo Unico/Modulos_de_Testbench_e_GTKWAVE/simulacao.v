@@ -73,8 +73,8 @@ module SingleCycleMIPS_Simulation;
         // Desativa o reset após 10 ns
         #10 rst = 0;
 
-        // Gera 20 ciclos de clock (período total de 10 ns por ciclo)
-        repeat (20) begin
+        // Gera 40 ciclos de clock (período total de 20 ns por ciclo)
+        repeat (40) begin
             #5 clk = ~clk;
         end
 

@@ -1,22 +1,26 @@
-# Nome do arquivo de saída
-EXE = sim.vvp
+# Compiler
+IVERILOG = iverilog
 
-# Arquivos Verilog
-SRC = AluControl.v Alu.v Registradores.v ControlUnit.v Processador.v InstructionMemory.v Pc.v DataMemory.v simulacao.v Mux2to1.v
+# Source files
+SRC = $(shell find . -name "*.v")
 
-# Arquivo de saída VCD
-VCD = Processador.vcd
+# Output executable (dentro da pasta ./Modulos de Testbench e GTKWAVE)
+OUT = ./Modulos de Testbench e GTKWAVE/sim.vvp
 
-all: compile run view
+# Default rule: compila o simulador
+all: $(OUT)
 
-compile:
-	iverilog -o $(EXE) $(SRC)
+$(OUT): $(SRC)
+	@mkdir -p ./Modulos_de_Testbench_GTKWAVE
+	$(IVERILOG) -o $(OUT) $(SRC)
 
-run:
-	vvp $(EXE)
+# Regra para executar a simulação e abrir o GTKWave com o arquivo de configuração
+run: $(OUT)
+	vvp $(OUT)
+	gtkwave processador.vcd./Modulos_de _Testbench_e_GTKWAVE/GTK_MODIFICADO.gtkw
 
-view:
-	gtkwave $(VCD) GTK_MODIFICADO.gtkw
-
+# Limpeza dos arquivos gerados
 clean:
-	rm -f $(EXEC) $(VCD)
+	rm -f $(OUT) *.vcd
+
+.PHONY: all run clean
