@@ -24,10 +24,10 @@ main:
     or  $t9, $t4, $t5        # $t9 = 100 OR 200
     
     # Teste de BEQ (branch if equal)
-    beq $t4, $t5, NAO_IGUAL  # Se $t4 != $t5, pula para NAO_IGUAL
+    beq $t4, $t5, IGUAL  # Se $t4 != $t5, pula para IGUAL
     addi $s0, $zero, 1       # Se $t4 == $t5, coloca 1 em $s0 (não deveria acontecer)
     
-NAO_IGUAL:
+IGUAL:
     addi $s1, $zero, 2       # Marca que BEQ funcionou
     
     # Teste de Jump (J)
