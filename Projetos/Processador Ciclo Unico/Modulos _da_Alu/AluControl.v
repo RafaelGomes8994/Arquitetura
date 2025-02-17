@@ -15,6 +15,7 @@ module ALUControl(
                     6'b100100: alu_control = 4'b0000; // AND
                     6'b100101: alu_control = 4'b0001; // OR
                     6'b101010: alu_control = 4'b0111; // SLT
+                    6'b100111: alu_control = 4'b1100; // NOR
                     default: alu_control = 4'b0000; // Caso padrão
                 endcase
             end
