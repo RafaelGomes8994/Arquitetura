@@ -1,3 +1,13 @@
+include "PC.v"
+include "InstructionMemory.v"
+include "ControlUnit.v"
+include "MUX2to1.v"
+include "Registradores.v"
+include "SignExtend.v"
+include "ALUControl.v"
+include "ALU.v"
+include "DataMemory.v"
+
 // Processador Principal (Single Cycle MIPS)
 module Processador(
     input clk,                   // Sinal de clock
