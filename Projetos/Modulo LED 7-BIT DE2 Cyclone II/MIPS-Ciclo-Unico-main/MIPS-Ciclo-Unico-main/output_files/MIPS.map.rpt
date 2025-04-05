@@ -1,0 +1,1326 @@
+Analysis & Synthesis report for MIPS
+Wed Apr  2 16:13:05 2025
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "MIPS:processador|ALU:alu_desvio"
+ 14. Port Connectivity Checks: "MIPS:processador|ALU:soma_pc"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr  2 16:13:05 2025           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; MIPS                                            ;
+; Top-level Entity Name              ; casca                                           ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 688                                             ;
+;     Total combinational functions  ; 592                                             ;
+;     Dedicated logic registers      ; 144                                             ;
+; Total registers                    ; 144                                             ;
+; Total pins                         ; 84                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; casca              ; MIPS               ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+---------------------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+---------------------------------------------+-----------------------------------------------------------------+---------+
+; Registradores.sv                 ; yes             ; User SystemVerilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/Registradores.sv      ;         ;
+; MIPS.sv                          ; yes             ; User SystemVerilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/MIPS.sv               ;         ;
+; ALU.v                            ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/ALU.v                 ;         ;
+; MemoriaDeInstrucoes.v            ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/MemoriaDeInstrucoes.v ;         ;
+; ControlLogicUnit.v               ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/ControlLogicUnit.v    ;         ;
+; Mux2x1_5bit.v                    ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/Mux2x1_5bit.v         ;         ;
+; Mux2x1_32bit.v                   ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/Mux2x1_32bit.v        ;         ;
+; ALUControl.v                     ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/ALUControl.v          ;         ;
+; DataMemory.v                     ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/DataMemory.v          ;         ;
+; SignalExtend.v                   ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/SignalExtend.v        ;         ;
+; ShiftLeft2.v                     ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/ShiftLeft2.v          ;         ;
+; ShiftLeft2_Jump.v                ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/ShiftLeft2_Jump.v     ;         ;
+; zeros.hex                        ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/zeros.hex             ;         ;
+; instrucoes.hex                   ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/instrucoes.hex        ;         ;
+; casca.sv                         ; yes             ; Auto-Found SystemVerilog HDL File           ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/casca.sv              ;         ;
+; SEG7_LUT_8.v                     ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/SEG7_LUT_8.v          ;         ;
+; SEG7_LUT.v                       ; yes             ; Auto-Found Verilog HDL File                 ; /home/aluno/Desktop/MIPS-Ciclo-Unico-main/SEG7_LUT.v            ;         ;
++----------------------------------+-----------------+---------------------------------------------+-----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 688    ;
+;                                             ;        ;
+; Total combinational functions               ; 592    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 392    ;
+;     -- 3 input functions                    ; 151    ;
+;     -- <=2 input functions                  ; 49     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 499    ;
+;     -- arithmetic mode                      ; 93     ;
+;                                             ;        ;
+; Total registers                             ; 144    ;
+;     -- Dedicated logic registers            ; 144    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 84     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; KEY[3] ;
+; Maximum fan-out                             ; 144    ;
+; Total fan-out                               ; 2621   ;
+; Average fan-out                             ; 3.20   ;
++---------------------------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                          ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Library Name ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
+; |casca                                  ; 592 (116)         ; 144 (0)      ; 0           ; 0            ; 0       ; 0         ; 84   ; 0            ; |casca                                                  ; work         ;
+;    |MIPS:processador|                   ; 420 (13)          ; 144 (16)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador                                 ; work         ;
+;       |ALU:alu_desvio|                  ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|ALU:alu_desvio                  ; work         ;
+;       |ALU:alu_memoria|                 ; 165 (165)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|ALU:alu_memoria                 ; work         ;
+;       |ALU:soma_pc|                     ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|ALU:soma_pc                     ; work         ;
+;       |ALUControl:controleALU|          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|ALUControl:controleALU          ; work         ;
+;       |ControlLogicUnit:controleLogico| ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|ControlLogicUnit:controleLogico ; work         ;
+;       |MemoriaDeInstrucoes:memoria|     ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|MemoriaDeInstrucoes:memoria     ; work         ;
+;       |Mux2x1_32bit:mux2|               ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|Mux2x1_32bit:mux2               ; work         ;
+;       |Mux2x1_32bit:mux5|               ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|Mux2x1_32bit:mux5               ; work         ;
+;       |Registradores:registradores|     ; 74 (74)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|MIPS:processador|Registradores:registradores     ; work         ;
+;    |SEG7_LUT_8:s8|                      ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8                                    ; work         ;
+;       |SEG7_LUT:u0|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u0                        ; work         ;
+;       |SEG7_LUT:u1|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u1                        ; work         ;
+;       |SEG7_LUT:u2|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u2                        ; work         ;
+;       |SEG7_LUT:u3|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u3                        ; work         ;
+;       |SEG7_LUT:u4|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u4                        ; work         ;
+;       |SEG7_LUT:u5|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u5                        ; work         ;
+;       |SEG7_LUT:u6|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u6                        ; work         ;
+;       |SEG7_LUT:u7|                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |casca|SEG7_LUT_8:s8|SEG7_LUT:u7                        ; work         ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                         ;
++---------------------------------------------------------+----------------------------------------------------------+------------------------+
+; Latch Name                                              ; Latch Enable Signal                                      ; Free of Timing Hazards ;
++---------------------------------------------------------+----------------------------------------------------------+------------------------+
+; MIPS:processador|ControlLogicUnit:controleLogico|RegDst ; MIPS:processador|ControlLogicUnit:controleLogico|WideOr1 ; yes                    ;
+; Number of user-specified and inferred latches = 1       ;                                                          ;                        ;
++---------------------------------------------------------+----------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                           ;
++----------------------------------------------------------------+---------------------------------------------+
+; Register name                                                  ; Reason for Removal                          ;
++----------------------------------------------------------------+---------------------------------------------+
+; MIPS:processador|PC[0]                                         ; Merged with MIPS:processador|PC[1]          ;
+; MIPS:processador|PC[1]                                         ; Stuck at GND due to stuck port data_in      ;
+; MIPS:processador|Registradores:registradores|registers[31][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[31][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[30][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[29][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[28][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[27][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[26][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[25][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[24][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[23][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[22][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[21][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[20][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[19][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[18][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[17][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[16][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[15][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[14][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[13][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[12][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[7][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[6][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[5][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[4][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][3]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][2]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][1]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][0]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][7]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][6]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][5]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][4]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][11] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][10] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][9]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][8]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][15] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][14] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][13] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][12] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][19] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][18] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][17] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][16] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][23] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][22] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][21] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][20] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][27] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][26] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][25] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][24] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][31] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][31]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][30] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][29] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[11][28] ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[3][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[2][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|PC[18..31]                                    ; Lost fanout                                 ;
+; MIPS:processador|Registradores:registradores|registers[0][0]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][1]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][2]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][3]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][4]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][5]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][6]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][7]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][8]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][9]   ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][10]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][11]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][12]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][13]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][14]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][15]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][16]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][17]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][18]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][19]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][20]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][21]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][22]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][23]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][24]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][25]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][26]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][27]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][28]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][29]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][30]  ; Stuck at GND due to stuck port clock_enable ;
+; MIPS:processador|Registradores:registradores|registers[0][31]  ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 912                        ;                                             ;
++----------------------------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                 ;
++------------------------+---------------------------+----------------------------------------+
+; Register name          ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------+---------------------------+----------------------------------------+
+; MIPS:processador|PC[1] ; Stuck at GND              ; MIPS:processador|PC[24]                ;
+;                        ; due to stuck port data_in ;                                        ;
++------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 144   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |casca|MIPS:processador|PC[13]                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |casca|MIPS:processador|PC[30]                            ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |casca|MIPS:processador|PC[3]                             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |casca|MIPS:processador|Registradores:registradores|Mux12 ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |casca|MIPS:processador|ALU:alu_memoria|Mux13             ;
+; 5:1                ; 25 bits   ; 75 LEs        ; 75 LEs               ; 0 LEs                  ; No         ; |casca|MIPS:processador|Mux2x1_32bit:mux2|Out[31]         ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |casca|MIPS:processador|Mux2x1_32bit:mux2|Out[3]          ;
+; 33:1               ; 18 bits   ; 396 LEs       ; 72 LEs               ; 324 LEs                ; No         ; |casca|numeros[22]                                        ;
+; 33:1               ; 14 bits   ; 308 LEs       ; 70 LEs               ; 238 LEs                ; No         ; |casca|numeros[16]                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:processador|ALU:alu_desvio"     ;
++--------------------+--------+----------+------------------------+
+; Port               ; Type   ; Severity ; Details                ;
++--------------------+--------+----------+------------------------+
+; ALUOperation[3..2] ; Input  ; Info     ; Stuck at GND           ;
+; ALUOperation[1]    ; Input  ; Info     ; Stuck at VCC           ;
+; ALUOperation[0]    ; Input  ; Info     ; Stuck at GND           ;
+; Zero               ; Output ; Info     ; Explicitly unconnected ;
++--------------------+--------+----------+------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:processador|ALU:soma_pc"        ;
++--------------------+--------+----------+------------------------+
+; Port               ; Type   ; Severity ; Details                ;
++--------------------+--------+----------+------------------------+
+; B[31..3]           ; Input  ; Info     ; Stuck at GND           ;
+; B[1..0]            ; Input  ; Info     ; Stuck at GND           ;
+; B[2]               ; Input  ; Info     ; Stuck at VCC           ;
+; ALUOperation[3..2] ; Input  ; Info     ; Stuck at GND           ;
+; ALUOperation[1]    ; Input  ; Info     ; Stuck at VCC           ;
+; ALUOperation[0]    ; Input  ; Info     ; Stuck at GND           ;
+; Zero               ; Output ; Info     ; Explicitly unconnected ;
++--------------------+--------+----------+------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Apr  2 16:13:01 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file Registradores.sv
+    Info (12023): Found entity 1: Registradores
+Info (12021): Found 11 design units, including 11 entities, in source file MIPS.sv
+    Info (12023): Found entity 1: ALU
+    Info (12023): Found entity 2: MemoriaDeInstrucoes
+    Info (12023): Found entity 3: ControlLogicUnit
+    Info (12023): Found entity 4: Mux2x1_5bit
+    Info (12023): Found entity 5: Mux2x1_32bit
+    Info (12023): Found entity 6: ALUControl
+    Info (12023): Found entity 7: DataMemory
+    Info (12023): Found entity 8: SignalExtend
+    Info (12023): Found entity 9: ShiftLeft2
+    Info (12023): Found entity 10: ShiftLeft2_Jump
+    Info (12023): Found entity 11: MIPS
+Warning (10236): Verilog HDL Implicit Net warning at MIPS.sv(123): created implicit net for "BranchEquals"
+Warning (12125): Using design file casca.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: casca
+Info (12127): Elaborating entity "casca" for the top level hierarchy
+Info (12128): Elaborating entity "MIPS" for hierarchy "MIPS:processador"
+Info (12128): Elaborating entity "ALU" for hierarchy "MIPS:processador|ALU:soma_pc"
+Info (12128): Elaborating entity "MemoriaDeInstrucoes" for hierarchy "MIPS:processador|MemoriaDeInstrucoes:memoria"
+Warning (10850): Verilog HDL warning at MemoriaDeInstrucoes.v(22): number of words (7) in memory file does not match the number of elements in the address range [0:255]
+Warning (10030): Net "memoria.data_a" at MemoriaDeInstrucoes.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memoria.waddr_a" at MemoriaDeInstrucoes.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memoria.we_a" at MemoriaDeInstrucoes.v(7) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "ControlLogicUnit" for hierarchy "MIPS:processador|ControlLogicUnit:controleLogico"
+Warning (10240): Verilog HDL Always Construct warning at ControlLogicUnit.v(14): inferring latch(es) for variable "RegDst", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlLogicUnit.v(14): inferring latch(es) for variable "MemtoReg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlLogicUnit.v(14): inferring latch(es) for variable "MemRead", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlLogicUnit.v(14): inferring latch(es) for variable "MemWrite", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "MemWrite" at ControlLogicUnit.v(14)
+Info (10041): Inferred latch for "MemRead" at ControlLogicUnit.v(14)
+Info (10041): Inferred latch for "MemtoReg" at ControlLogicUnit.v(14)
+Info (10041): Inferred latch for "RegDst" at ControlLogicUnit.v(14)
+Info (12128): Elaborating entity "Mux2x1_5bit" for hierarchy "MIPS:processador|Mux2x1_5bit:mux1"
+Info (12128): Elaborating entity "Registradores" for hierarchy "MIPS:processador|Registradores:registradores"
+Info (12128): Elaborating entity "SignalExtend" for hierarchy "MIPS:processador|SignalExtend:extensor"
+Info (12128): Elaborating entity "Mux2x1_32bit" for hierarchy "MIPS:processador|Mux2x1_32bit:mux2"
+Info (12128): Elaborating entity "ALUControl" for hierarchy "MIPS:processador|ALUControl:controleALU"
+Info (12128): Elaborating entity "DataMemory" for hierarchy "MIPS:processador|DataMemory:memoriaDados"
+Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "MIPS:processador|ShiftLeft2:shift"
+Info (12128): Elaborating entity "ShiftLeft2_Jump" for hierarchy "MIPS:processador|ShiftLeft2_Jump:shift_jump"
+Warning (12125): Using design file SEG7_LUT_8.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: SEG7_LUT_8
+Info (12128): Elaborating entity "SEG7_LUT_8" for hierarchy "SEG7_LUT_8:s8"
+Warning (12125): Using design file SEG7_LUT.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: SEG7_LUT
+Info (12128): Elaborating entity "SEG7_LUT" for hierarchy "SEG7_LUT_8:s8|SEG7_LUT:u0"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "MIPS:processador|DataMemory:memoriaDados|memory" is uninferred due to asynchronous read logic
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/aluno/Desktop/MIPS-Ciclo-Unico-main/db/MIPS.ram0_MemoriaDeInstrucoes_21c96cf3.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (13012): Latch MIPS:processador|ControlLogicUnit:controleLogico|RegDst has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MIPS:processador|PC[9]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "CLOCK_50"
+Info (21057): Implemented 804 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 720 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 354 megabytes
+    Info: Processing ended: Wed Apr  2 16:13:05 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
