@@ -1,6 +1,6 @@
 # codigo exemplo que esta escrito em instrucoes.bin
-addi $8, $zero, 32
-addi $9, $zero, 16
+addi $8, $zero, 44
+addi $9, $zero, 12
 add $10, $8, $9
 loop:
 beq $8, $9, end
